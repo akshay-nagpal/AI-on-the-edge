@@ -4,7 +4,7 @@ import com.example.erp.bean.Login;
 import com.example.erp.bean.Resource;
 import com.example.erp.dao.LoginDao;
 import com.example.erp.utils.SessionUtil;
-import com.example.erp.utils.dtutil;
+import com.example.erp.utils.DTutils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -51,7 +51,7 @@ public class LoginDaoImpl implements LoginDao {
     }
 
     @Override
-    public int registerserver(dtutil obj) {
+    public int registerserver(DTutils obj) {
         System.out.println("hithere");
         Session session = SessionUtil.getSession();
         Transaction transaction = session.beginTransaction();
