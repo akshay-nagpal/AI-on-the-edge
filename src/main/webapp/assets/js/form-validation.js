@@ -31,8 +31,14 @@ if(student_form) {
             if (result['status'] == 200) {
                 console.log("In else :" + result['status']);
                 window.localStorage.setItem("email_id", email);
-                window.location = "ThankYou.html";
-
+                if(usertype==3){
+                    console.log("sup");
+                    window.location="Upload.html";
+                }
+                else {
+                    console.log("not working");
+                    window.location = "ThankYou.html";
+                }
                 //fetch_courses(email);
             } else {
                 loading.style.display='none';
