@@ -11,8 +11,19 @@ public class Resource {
     @Column(nullable = false, unique = true)
     private String IP;
     @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
     private String sudo_password;
-//    @OneToOne(mappedBy = "Resource")
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    //    @OneToOne(mappedBy = "Resource")
 //    private Login login;
     public Integer getId() {
         return id;
