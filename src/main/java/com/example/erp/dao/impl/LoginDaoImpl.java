@@ -52,6 +52,7 @@ public class LoginDaoImpl implements LoginDao {
 
     @Override
     public int registerserver(dtutil obj) {
+        System.out.println("hithere");
         Session session = SessionUtil.getSession();
         Transaction transaction = session.beginTransaction();
         Login log=new Login();
@@ -64,8 +65,8 @@ public class LoginDaoImpl implements LoginDao {
         res.setSudo_password(obj.getSudo_password());
         res.setUsername(obj.getUsername());
         session.save(res);
-        log.setResource(res);
-        session.save(log);
+        res.setLogin(log);
+        session.save(res);
         transaction.commit();
         session.close();
         return 1;

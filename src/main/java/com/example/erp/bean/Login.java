@@ -17,22 +17,11 @@ public class Login
     @Column(nullable = false)
     private Integer usertype;
 
-    public Resource getResource() {
-        return resource;
-    }
-
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-    }
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "login")
     private Resource resource;
     public Integer getLogin_id() {
         return login_id;
     }
-
     public void setLogin_id(Integer login_id) {
         this.login_id = login_id;
     }

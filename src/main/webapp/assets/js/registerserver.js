@@ -15,7 +15,7 @@ if(registerflag) {
         //     IP: document.getElementById('IP').value,
         // }));
         if (registerflag.checkValidity() === true) {
-            let response = await fetch('api/login/register_server', {
+            let response = await fetch('api/login/server', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
@@ -32,6 +32,9 @@ if(registerflag) {
             // let result2=await response2;
             let result = await response;
             console.log(result);
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('inputPassword').value;
+            console.log(email);
             if (result['status'] == 200) {
                 console.log("In else :" + result['status']);
                 window.location = "ThankYou.html";

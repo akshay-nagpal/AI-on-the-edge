@@ -45,10 +45,10 @@ public class LoginController {
         return Response.ok().status(200).build();
     }
     @POST
-    @Path("/register_server")
+    @Path("/server")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response registerserver(dtutil obj) throws URISyntaxException {
+    public Response register_server(dtutil obj) throws URISyntaxException {
         LoginService ls_obj = new LoginService();
         int ret = ls_obj.registerserver(obj);
         System.out.println(ret);

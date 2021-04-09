@@ -15,6 +15,18 @@ public class Resource {
     @Column(nullable = false)
     private String sudo_password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "login_id")
+    private Login login;
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
     public String getUsername() {
         return username;
     }

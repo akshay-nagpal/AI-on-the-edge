@@ -30,9 +30,8 @@ public class addutil {
         log.setPassword("pass");
         log.setUsertype(2);
         session.save(log);
-        log.setResource(res);
-        session.save(log);
-
+        res.setLogin(log);
+        session.save(res);
 //                        session.save(student);
         transaction.commit();
         session.close();
