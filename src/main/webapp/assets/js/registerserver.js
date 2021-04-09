@@ -3,7 +3,7 @@ if(registerflag) {
     registerflag.addEventListener('submit', async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        var usertype=window.localStorage.getItem("usertype");
+        let usertype=window.localStorage.getItem("usertype");
         // console.log(usertype);
         // console.log(document.getElementById('IP').value);
         // console.log(JSON.stringify({
