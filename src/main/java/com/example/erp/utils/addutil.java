@@ -24,7 +24,6 @@ public class addutil {
 
         res.setIP("192.168.43.49");
         res.setSudo_password("rahul166");
-        res.setUsername("rahul");
         session.save(res);
         log.setEmail("rahul@gmail.com");
         log.setPassword("pass");
