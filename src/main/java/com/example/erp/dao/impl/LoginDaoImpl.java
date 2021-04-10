@@ -3,6 +3,7 @@ package com.example.erp.dao.impl;
 import com.example.erp.bean.Login;
 import com.example.erp.bean.Resource;
 import com.example.erp.dao.LoginDao;
+import com.example.erp.utils.FileUpload;
 import com.example.erp.utils.SessionUtil;
 import com.example.erp.utils.DTutils;
 import org.hibernate.Session;
@@ -30,7 +31,8 @@ public class LoginDaoImpl implements LoginDao {
         if(results.size()==0){
             return 0;
         }
-
+        FileUpload fileUpload=new FileUpload();
+        fileUpload.setEmail(loginobj.getEmail());
         session.close();
         return 1;
 

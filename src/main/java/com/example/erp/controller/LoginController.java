@@ -4,6 +4,8 @@ import com.example.erp.bean.Login;
 import com.example.erp.bean.Resource;
 import com.example.erp.services.LoginService;
 import com.example.erp.utils.DTutils;
+import com.example.erp.utils.FileUpload;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -28,8 +30,10 @@ public class LoginController {
         if (ret == 0) {
             return Response.status(406).build();
         }
-        return Response.ok().status(200).build();
-    }
+        else {
+            return Response.ok().status(200).build();
+        }
+        }
     @POST
     @Path("/registeruser")
     @Produces(MediaType.TEXT_PLAIN)

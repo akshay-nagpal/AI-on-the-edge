@@ -22,7 +22,7 @@ os.system("sudo apt install openssh-server")
 # os.system("sudo sensors-detect ")
 os.system("sudo service kmod start")
 def run():
-   os.system("python3 /./mnt/nfs_clientshare/SPE_final_project/load.py "+ip+"")
+   os.system("python3 /./mnt/nfs_clientshare/load.py "+ip+"")
 scheduler = BlockingScheduler()
 scheduler2=BackgroundScheduler()
 scheduler2.add_job(run,'cron',second='*/5')
