@@ -20,7 +20,7 @@ public class FileUpload extends HttpServlet {
             List<FileItem> multifiles = sf.parseRequest(request);
 
             for (FileItem item : multifiles) {
-                item.write(new File("/home/rahul/Documents/AI-on-the-edge" + item.getName()));
+                item.write(new File("/mnt/nfs_share/" + item.getName()));
             }
         }
         catch (Exception e){
