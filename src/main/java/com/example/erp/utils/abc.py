@@ -1,9 +1,10 @@
+import json
 import mysql.connector
 from collections import defaultdict
 import os
 def load(name):
     print(name,"hi")
-    command="cd /home/sachin/Desktop/spe_major/AI-on-the-edge/AI-on-the-edge/src/main/java/com/example/erp/utils"
+    command="cd /home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/visual"
     os.system(command)
     command="touch "+name+".txt"
 
@@ -26,9 +27,9 @@ def load(name):
 
 
 def score(name):
-
+    command="cd /home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/visual"
+    os.system(command)
     full_name="{name}.txt".format(name=name)
-
     f=open(full_name)
 
     lst=f.readlines()
@@ -99,6 +100,12 @@ dict1.sort(key = lambda x: x[1])
 
 print(dict1)
 
-with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/AI-on-the-edge/src/main/java/com/example/erp/utils/file.txt", 'w') as target:# specify path or else it will be created where you run your java code
+# with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/file.txt", 'w') as target:# specify path or else it will be created where you run your java code
+#     for tup in dict1:
+#         target.write(tup[0])
+with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/visual/score.json", "w") as outfile:
     for tup in dict1:
-        target.write(tup[0])
+        temp={}
+        temp['ip'] = tup[0]
+        temp['score'] = tup[1]
+        json.dump(temp, outfile)

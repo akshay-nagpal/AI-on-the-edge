@@ -7,7 +7,7 @@ public class ScriptPython {
         System.out.println("Printing");
         String[] cmd = {
                 "python3",
-                "/home/sachin/Desktop/spe_major/AI-on-the-edge/AI-on-the-edge/src/main/java/com/example/erp/utils/abc.py",
+                "/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/abc.py",
                 arg1,
         };
         try {
@@ -24,7 +24,7 @@ class Solution {
     public static void main(String[] args){
          ScriptPython scriptPython = new ScriptPython();
 //        scriptPython.runScript();
-          ScriptPython.runPython("sachin sharma");
+          ScriptPython.runPython("");
 
     }
 
