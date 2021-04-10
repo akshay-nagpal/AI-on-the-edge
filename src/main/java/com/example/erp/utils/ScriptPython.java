@@ -7,7 +7,7 @@ public class ScriptPython {
         System.out.println("Printing");
         String[] cmd = {
                 "python3",
-                "/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/abc.py",
+                "/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balencer.py",
                 arg1,
         };
         try {
