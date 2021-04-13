@@ -36,7 +36,7 @@ if(registerflag) {
             let password = document.getElementById('inputPassword').value;
             console.log(email);
             if (result['status'] == 200) {
-                console.log("In else :" + result['status']);
+                console.log("In else :" + result['sta   tus']);
                 window.location = "ThankYou.html";
             }
             else

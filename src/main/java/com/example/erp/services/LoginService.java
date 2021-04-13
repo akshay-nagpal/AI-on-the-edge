@@ -20,6 +20,7 @@ public class LoginService {
     }
     public int registerserver(DTutils dtobj)
     {
+        System.out.println("From register server");
         LoginDaoImpl obj=new LoginDaoImpl();
         int ret=obj.registerserver(dtobj);
         return ret;
