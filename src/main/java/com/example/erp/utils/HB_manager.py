@@ -93,7 +93,7 @@ print("Active :::" , active)
 print("dead ::" , dead)
 fa=open("/mnt/nfs_share/active.pickle","wb")
 pickle.dump(active,fa)
-fd=open("/mnt/nfs_share/active.pickle","wb")
+fd=open("/mnt/nfs_share/dead.pickle","wb")
 pickle.dump(dead,fd)
 
 dict1 = []
