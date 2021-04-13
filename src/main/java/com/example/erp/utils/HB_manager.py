@@ -28,9 +28,9 @@ def load(name):
 
 
 def score(name):
-    command="cd /mnt/nfs_share/"
-    os.system(command)
-    full_name="{name}.txt".format(name=name)
+    command="cd /./mnt/nfs_share/"
+    # os.system(command)
+    full_name="/./mnt/nfs_share/{name}.txt".format(name=name)
     f=open(full_name)
 
     lst=f.readlines()

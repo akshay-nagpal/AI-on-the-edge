@@ -23,8 +23,12 @@ public class FileUpload extends HttpServlet {
             ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
             List<FileItem> multifiles = sf.parseRequest(request);
             File theDir = new File("/mnt/nfs_share/"+email);
+            File CmpDir = new File("/mnt/nfs_share/"+email+"/"+"completed.txt");
             if (!theDir.exists()){
                 theDir.mkdirs();
+            }
+            if (!CmpDir.exists()){
+                CmpDir.mkdirs();
             }
 //            String dir="/mnt/nfs_share/ %s";
 //            String.format(dir, email);

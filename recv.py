@@ -14,6 +14,9 @@ queue_name = result.method.queue
 ip = sys.argv[1]
 
 #Apply some error handling
+ack_connection = pika.BlockingConnection(pika.ConnectionParameters(host='192.168.43.132',credentials=credentials))
+ack_channel = ack_connection.channel()
+ack_channel.queue_declare(queue='ackqueue')
 
 
 channel.queue_bind(
@@ -26,7 +29,12 @@ print(' [*] Waiting for jobs. To exit press CTRL+C')
 def callback(ch, method, properties, body):
     print(" [x] %r:%r" % (method.routing_key, body))
     os.system(body)
+    print("DONE!!")
+    send_ack()
 
+def send_ack():
+    ack_channel.basic_publish(exchange='', routing_key='ackqueue',body='1')
+    return
 
 channel.basic_consume(
     queue=queue_name, on_message_callback=callback, auto_ack=True)
