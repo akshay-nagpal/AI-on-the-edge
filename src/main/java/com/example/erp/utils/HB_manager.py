@@ -91,9 +91,9 @@ for k,v in mapping.items():
 
 print("Active :::" , active)
 print("dead ::" , dead)
-fa=open("active.pickle","wb")
+fa=open("/mnt/nfs_share/active.pickle","wb")
 pickle.dump(active,fa)
-fd=open("dead.pickle","wb")
+fd=open("/mnt/nfs_share/active.pickle","wb")
 pickle.dump(dead,fd)
 
 dict1 = []

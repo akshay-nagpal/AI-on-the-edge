@@ -3,10 +3,10 @@ import pickle
 import sys
 job_path=sys.argv[1]
 out_path=sys.argv[2]
-fa=open("/mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/active.pickle","rb")
+fa=open("/mnt/nfs_share/active.pickle","rb")
 active=pickle.load(fa)
 
-fd=open("/mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/dead.pickle","rb")
+fd=open("/mnt/nfs_share/dead.pickle","rb")
 dead=pickle.load(fd)
 print("Active :::" , active)
 print("dead ::" , dead)
