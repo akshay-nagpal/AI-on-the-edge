@@ -19,6 +19,8 @@ public class Login
 
     @OneToOne(mappedBy = "login")
     private Resource resource;
+    @OneToOne(mappedBy = "login")
+    private Application application;
     public Integer getLogin_id() {
         return login_id;
     }

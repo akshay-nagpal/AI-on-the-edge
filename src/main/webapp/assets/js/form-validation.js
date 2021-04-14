@@ -32,7 +32,7 @@ if(student_form) {
                 console.log("In else :" + result['status']);
                 window.localStorage.setItem("email_id", email);
                 if(usertype == 3) {
-                    window.location= "Upload.html";
+                    window.location= "upload.html";
                 }
                 if(usertype==1)
                 {

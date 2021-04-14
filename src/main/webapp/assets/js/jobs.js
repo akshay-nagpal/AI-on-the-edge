@@ -9,12 +9,14 @@ jobbutton.addEventListener('click', async (e) => {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify({
-            email: window.localStorage.getItem("email_id")
-
+            email: window.localStorage.getItem("email_id"),
+            application_name:document.getElementById("application_name").valueOf()
         })
     });
 
 });
-
+function direct(){
+    window.location="dash.html"
+}
 
 
