@@ -34,6 +34,11 @@ if(student_form) {
                 if(usertype == 3) {
                     window.location= "Upload.html";
                 }
+                if(usertype==1)
+                {
+                    window.location="score.html";
+                }
+
                 else
                 {
                     window.location = "ThankYou.html";

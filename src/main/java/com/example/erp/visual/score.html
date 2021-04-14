@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script>
         var dataPoints = [];
         window.onload = function() {
@@ -36,8 +38,9 @@
                         y: data[i].score
                     });
                 }
-                GenerateTable();
+                
                 list();
+                GenerateTable();
                 chart.render();
 
             }
@@ -60,11 +63,11 @@
                 let i;
                 const basic = new Array();
                 const arr = new Array();
-                arr.push(["Event per Second","Cpu Percentage","Free Memory Percentage","Actual free Ram(GB)","CPU Temprature","IP"]);
+                arr.push(["Event per Second","Cpu Percentage","Free Memory Percentage","Actual free Ram(GB)","IP","CPU Temprature"]);
                 for (i = 0; i < dataPoints.length; i++) {
                     var temp = (dataPoints[i].label);
                     console.log(temp);
-                    $.get("/AI-on-the-edge/com/example/erp/visual/" + temp + ".txt", function (data) {
+                    $.get("/mnt/nfs_share/" + temp + ".txt", function (data) {
                         arr.push(data.split("\n"));
                         console.log(arr);
                         //console.log(arr.length)
@@ -156,7 +159,6 @@
         <div id="dvTable"></div>
     </div>
 </div>
-<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 </body>
 </html>

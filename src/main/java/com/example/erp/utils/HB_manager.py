@@ -45,7 +45,7 @@ def score(name):
 
     free_RAM=lst[3]
 
-    current_temperature=lst[4]
+    current_temperature=lst[5]
 
     number_of_events_per_sec=lst[0]
 
