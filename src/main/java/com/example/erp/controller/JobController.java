@@ -6,6 +6,8 @@ import javax.ws.rs.core.Response;
 import java.io.*;
 import java.net.URISyntaxException;
 
+import com.example.erp.bean.Application;
+import com.example.erp.services.ApplicationService;
 import com.example.erp.utils.Jobutil;
 import com.example.erp.utils.ScriptPython;
 @Path("/job")
@@ -14,13 +16,18 @@ public class JobController {
     @Path(("/schedule"))
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response schedule_job(Jobutil data) throws URISyntaxException{
+    public Response schedule_job(Application data) throws URISyntaxException{
         System.out.println(data.getEmail());
         System.out.println(data.getAppname());
         String email=data.getEmail();
         String appname=data.getAppname();
+        ApplicationService ap_st=new ApplicationService();
+        int ret=ap_st.register_app(data);
         ScriptPython sp=new ScriptPython();
         sp.runPython(email,appname);
+        if (ret == 0) {
+            return Response.status(406).build();
+        }
         return Response.ok().status(200).build();
     }
     @GET

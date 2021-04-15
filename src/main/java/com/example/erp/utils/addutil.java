@@ -1,5 +1,6 @@
 package com.example.erp.utils;
 
+import com.example.erp.bean.Application;
 import com.example.erp.bean.Login;
 import com.example.erp.bean.Resource;
 import org.hibernate.Session;
@@ -21,7 +22,10 @@ public class addutil {
 //                        System.out.println(query.get(i).getName());
 //                }
 
-
+        Application application=new Application();
+        application.setAppname("test.py");
+        application.setEmail("akshay@gmail.com");
+        session.save(application);
         res.setIP("192.168.43.49");
         res.setSudo_password("rahul166");
         res.setUsername("rahul");

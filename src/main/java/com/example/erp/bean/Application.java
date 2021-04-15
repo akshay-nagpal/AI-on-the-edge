@@ -1,39 +1,32 @@
 package com.example.erp.bean;
 
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Application")
 public class Application {
-    String application_name;
-    String job_path;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name="login_id")
+    private Integer id;
+    @Column
+    private String appname;
+    @Column
+    private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "login_id")
-    private Login login;
-    public String getApplication_name() {
-        return application_name;
+    public String getAppname() {
+        return appname;
     }
 
-    public void setApplication_name(String application_name) {
-        this.application_name = application_name;
+    public void setAppname(String appname) {
+        this.appname = appname;
     }
 
-    public String getJob_path() {
-        return job_path;
+    public String getEmail() {
+        return email;
     }
 
-    public void setJob_path(String job_path) {
-        this.job_path = job_path;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
-
 }
