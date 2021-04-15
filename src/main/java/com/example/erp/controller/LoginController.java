@@ -22,11 +22,12 @@ public class LoginController {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response login(Login loginobj) throws URISyntaxException {
-//        System.out.println("Usertpe:"+loginobj.getUsertype());
-//        System.out.println(loginobj.getEmail());
+        System.out.println("Usertpe:"+loginobj.getUsertype());
+        System.out.println(loginobj.getEmail());
         LoginService ls_obj = new LoginService();
 
         int ret = ls_obj.login(loginobj);
+        System.out.println(ret);
         if (ret == 0) {
             return Response.status(406).build();
         }

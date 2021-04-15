@@ -7,7 +7,7 @@ from apscheduler.schedulers.background import BlockingScheduler
 active=0
 ack_flag="0"
 ip = sys.argv[1]
-out_path=sys.argv[2]
+email=sys.argv[2]
 job_path=sys.argv[3:]
 print(job_path)
 print(ip+" "+out_path+" ")
@@ -20,7 +20,7 @@ def callback(ch, method, properties, body):
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        f=open("/mnt/nfs_share/"+out_path+"/completed.txt","w")
+        f=open("/mnt/nfs_share/"+email+"/"+job_path+"/completed.txt","w")
         f.write("1")
         f.close()
         print("job completed")

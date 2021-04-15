@@ -57,7 +57,7 @@ def score(name):
 
     return Score
 
-mydb = mysql.connector.connect( host="localhost",user="akshay",password="password",database="platformdb",auth_plugin='mysql_native_password')
+mydb = mysql.connector.connect( host="localhost",user="root",password="rahul166",database="platformdb",auth_plugin='mysql_native_password')
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM Resource")
 myresult = mycursor.fetchall()
@@ -104,12 +104,15 @@ for i in active:
 dict1.sort(key = lambda x: x[1])
 
 print(dict1)
-with open("/mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/visual/score.json", "w") as outfile:
+with open("/mnt/nfs_share/score.json", "w") as outfile:
+    lst=[]
     for tup in dict1:
         temp={}
         temp['ip'] = tup[0]
         temp['score'] = tup[1]
-        json.dump(temp, outfile)
+        lst.append(temp)
+    print(lst)
+    json.dump(lst, outfile)
 # with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/file.txt", 'w') as target:# specify path or else it will be created where you run your java code
 #     for tup in dict1:
 #         target.write(tup[0])

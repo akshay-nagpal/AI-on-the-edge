@@ -1,8 +1,8 @@
 import os
 import pickle
 import sys
-job_path=sys.argv[1]
-out_path=sys.argv[2]
+email=sys.argv[1]
+appname=sys.argv[2]
 fa=open("/mnt/nfs_share/active.pickle","rb")
 active=pickle.load(fa)
 
@@ -17,6 +17,6 @@ for i in active:
 ip=dict1[0]
 dict1.sort(key = lambda x: x[1])
 # command="python3 "+job_path
-
-os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/send.py "+ip+" "+out_path+" "+"python3 "+job_path)
+os.mkdir("/mnt/nfs_share/"+email+"/"+appname+".py")
+os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/send.py "+ip+" "+email+" "+"python3 "+appname+".py")
 

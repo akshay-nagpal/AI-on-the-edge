@@ -9,7 +9,7 @@
         <module name="AI-on-the-edge" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="AI-on-the-edge" target="1.8" />
     </bytecodeTargetLevel>
   </component>

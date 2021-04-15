@@ -18,6 +18,7 @@ public class LoginDaoImpl implements LoginDao {
     public int login(Login loginobj){
         Session session = SessionUtil.getSession();
         session.beginTransaction();
+        System.out.println("In dao impl");
         String hql="select email from Login  where email= :param and password= :param2 and usertype= :param3";
         Query query=session.createQuery(hql);
         query.setParameter("param",loginobj.getEmail());

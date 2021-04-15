@@ -8,16 +8,14 @@
 <h1>Select jobs here and run them</h1>
 <!--<button id="runjob">Run job</button>-->
 <!--<button id="Application_name">Application_name</button>-->
-<form id="student-validation">
-    <label for="application_name" class="visually-hidden">Application Name</label>
-    <input type="string" id="application_name" class="form-control" placeholder="Application Name eg- script.py" required autofocus>
-    <br>
-    <form action="upload" method="post" enctype="multipart/form-data">
+<form action="upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" multiple/>
-        <br>
-        <input type="submit" onclick="direct()">
+        <input type="submit">
     </form>
-</form>
 </body>
-<script src="assets/js/jobs.js"></script>
+<script>
+    function direct(){
+        window.location="dash.html";
+    }
+</script>
 </html>

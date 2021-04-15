@@ -23,6 +23,7 @@ if(student_form) {
                     usertype:usertype,
                 })
             });
+            console.log("usertype",usertype);
             let result = await response;
             let email = document.getElementById('email').value;
             let password=document.getElementById('inputPassword').value;
@@ -31,18 +32,19 @@ if(student_form) {
             if (result['status'] == 200) {
                 console.log("In else :" + result['status']);
                 window.localStorage.setItem("email_id", email);
-                if(usertype == 3) {
-                    window.location= "upload.html";
-                }
-                if(usertype==1)
-                {
-                    window.location="score.html";
-                }
+                window.location="Upload.html"
+                // if(usertype == 3) {
+                //     window.location= "Upload.html";
+                // }
+                // if(usertype==1)
+                // {
+                //     window.location="score.html";
+                // }
 
-                else
-                {
-                    window.location = "ThankYou.html";
-                }
+                // else
+                // {
+                //     window.location = "ThankYou.html";
+                // }
 
                 //fetch_courses(email);
             } else {
