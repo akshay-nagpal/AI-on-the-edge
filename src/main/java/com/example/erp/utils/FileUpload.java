@@ -22,18 +22,18 @@ public class FileUpload extends HttpServlet {
             System.out.println("File upload"+email);
             ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
             List<FileItem> multifiles = sf.parseRequest(request);
-            File theDir = new File("/./mnt/nfs_share/"+email);
-            File CmpDir = new File("/mnt/nfs_share/"+email+"/"+"completed.txt");
+            String path="/home/rahul/Documents/"+email;
+            File theDir = new File(path);
             if (!theDir.exists()){
                 theDir.mkdirs();
             }
-            if (!CmpDir.exists()){
-                CmpDir.mkdirs();
-            }
+//            if (!CmpDir.exists()){
+//                CmpDir.mkdirs();
+//            }
 //            String dir="/mnt/nfs_share/ %s";
 //            String.format(dir, email);
             for (FileItem item : multifiles) {
-                item.write(new File("/./mnt/nfs_share/"+email+"/"+item.getName()));
+                item.write(new File(path+"/"+item.getName()));
             }
         }
         catch (Exception e){

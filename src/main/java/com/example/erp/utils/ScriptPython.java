@@ -7,12 +7,12 @@ public class ScriptPython {
         System.out.println("Printing");
         String[] cmd = {
                 "python3",
-                "/home/rahul/Documents/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balencer.py",
+                "/home/rahul/Documents/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py",
                 arg1,
                 arg2,
         };
         try {
-            Runtime.getRuntime().exec(cmd);
+            Runtime.getRuntime().exec("python3"+" "+"/home/rahul/Documents/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+arg1+" "+arg2);
             System.out.println("Executed");
         } catch (IOException e) {
             System.out.println("Not executed");

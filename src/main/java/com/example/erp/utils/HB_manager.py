@@ -91,9 +91,11 @@ for k,v in mapping.items():
 
 print("Active :::" , active)
 print("dead ::" , dead)
-fa=open("/mnt/nfs_share/active.pickle","wb")
+# fa=open("/mnt/nfs_share/active.pickle","wb")
+fa=open("/home/rahul/Documents/active.pickle","wb")
 pickle.dump(active,fa)
-fd=open("/mnt/nfs_share/dead.pickle","wb")
+# fd=open("/mnt/nfs_share/dead.pickle","wb")
+fd=open("/home/rahul/Documents/dead.pickle","wb")
 pickle.dump(dead,fd)
 
 dict1 = []
@@ -104,15 +106,15 @@ for i in active:
 dict1.sort(key = lambda x: x[1])
 
 print(dict1)
-with open("/mnt/nfs_share/score.json", "w") as outfile:
-    lst=[]
-    for tup in dict1:
-        temp={}
-        temp['ip'] = tup[0]
-        temp['score'] = tup[1]
-        lst.append(temp)
-    print(lst)
-    json.dump(lst, outfile)
+# with open("/mnt/nfs_share/score.json", "w") as outfile:
+#     lst=[]
+#     for tup in dict1:
+#         temp={}
+#         temp['ip'] = tup[0]
+#         temp['score'] = tup[1]
+#         lst.append(temp)
+#     print(lst)
+#     json.dump(lst, outfile)
 # with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/file.txt", 'w') as target:# specify path or else it will be created where you run your java code
 #     for tup in dict1:
 #         target.write(tup[0])

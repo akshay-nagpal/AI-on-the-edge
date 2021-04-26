@@ -8,9 +8,10 @@ active=0
 ack_flag="0"
 ip = sys.argv[1]
 email=sys.argv[2]
-job_path=sys.argv[3:]
+appname=sys.argv[3]
+job_path=sys.argv[4:]
 print(job_path)
-print(ip+" "+out_path+" ")
+# print(ip+" "+out_path+" ")
 def callback(ch, method, properties, body):
     print("ACK recv :",body)
     # ack_flag=str(body,'UTF-8')
@@ -20,7 +21,9 @@ def callback(ch, method, properties, body):
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        f=open("/mnt/nfs_share/"+email+"/"+job_path+"/completed.txt","w")
+        done= "/home/rahul/Documents"
+#         f=open("/mnt/nfs_share/"+email+"/"+job_path+"/completed.txt","w")
+        f=open(done+"/"+email+"/"+appname+"/completed.txt","w")
         f.write("1")
         f.close()
         print("job completed")
@@ -36,12 +39,15 @@ def run(ack_flag):
         active=0
         # return 0
     if(active==0 and ack_flag!="1"):
-        os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+job_path[0]+" "+job_path[1])
+#         os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+job_path[0]+" "+job_path[1])
+        os.system("python3 /home/rahul/Documents/AI-on-the-edge/send.py "+ip+" "+email+" "+appname+" "+"python3 "+appname+".py")
         sys.exit(0)
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        f=open("/mnt/nfs_share/"+out_path+"/completed.txt")
+        path="/home/rahul/Documents"
+#         f=open("/mnt/nfs_share/"+out_path+"/completed.txt")
+        f=open(path+"/"+email+"/"+appname+"/completed.txt")
         f.write(1)
         print("job completed")
         sys.exit(0)
@@ -61,9 +67,9 @@ channel.exchange_declare(exchange='jobs', exchange_type='direct')
 ack_connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 ack_channel = ack_connection.channel()
 q=ack_channel.queue_declare(queue='ackqueue')
-message = ' '.join(sys.argv[3:]) or 'DEFAULT MESSAGE'
+message = ' '.join(sys.argv[4:]) or 'DEFAULT MESSAGE'
 # pika.queue_purge('ackqueue')
-os.system('echo 2122 | sudo -S rabbitmqctl purge_queue ackqueue')
+os.system('echo rahul166 | sudo -S rabbitmqctl purge_queue ackqueue')
 channel.basic_publish(
     exchange='jobs', routing_key=ip, body=message, properties=pika.BasicProperties(content_type='text/plain',
                                                                                        delivery_mode=1))
