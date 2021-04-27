@@ -1,5 +1,7 @@
 package com.example.erp.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -16,6 +18,7 @@ import com.example.erp.utils.ScriptPython;
 
 @Path("/job")
 public class JobController {
+    private static final Logger logger = LogManager.getLogger(JobController.class);
     @POST
     @Path(("/schedule"))
     @Produces(MediaType.TEXT_PLAIN)
@@ -38,6 +41,9 @@ public class JobController {
         myWriter.close();
         //        ApplicationService ap_st=new ApplicationService();
 //        int ret=ap_st.register_app(data);
+        logger.info("{} Directory created for the job", data.getEmail());
+        logger.info("{} Job is running", data.getAppname());
+
         ScriptPython sp=new ScriptPython();
         sp.runPython(email,appname);
 //        if (ret == 0) {
@@ -70,7 +76,9 @@ public class JobController {
             System.out.println(line);
             if( line.equals("1")) {
                 System.out.println(appname+"Done");
-//                    f.delete();
+                    f.delete();
+                logger.info("{} Job completed", appname);
+
 //                    return Response.ok().entity(appname).build();
                 break;
             } else {
@@ -93,6 +101,8 @@ public class JobController {
         File fileDownload = new File("/home/rahul/Documents/"+email+"/"+appname+"/"+appname+".csv");
         Response.ResponseBuilder response = Response.ok((Object) fileDownload);
         response.header("Content-Disposition", "attachment;filename=" + appname+".csv");
+        logger.info("{} File downloaded for the job", appname);
+
         return response.build();
     }
 
