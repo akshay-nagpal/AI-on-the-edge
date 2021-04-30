@@ -2,8 +2,8 @@ import subprocess
 import sys
 import os
 import time
-import schedule
 os.system("pip3 install schedule")
+import schedule
 os.system("pip3 install apscheduler")
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.schedulers.background import BlockingScheduler
@@ -13,8 +13,8 @@ ip=sys.argv[1]
 os.system("sudo apt update")
 os.system("sudo apt install nfs-common -y")
 os.system("sudo mkdir -p /mnt/nfs_share")
-os.system("sudo mount 192.168.43.132:/mnt/nfs_share  /mnt/nfs_share")
-os.system("sudo echo '192.168.43.132:/nfsshare /mnt  nfs defaults 0 0' >>sudo /etc/fstab")
+os.system("sudo mount 192.168.29.132:/mnt/nfs_share  /mnt/nfs_share")
+os.system("sudo echo '192.168.29.132:/nfsshare /mnt  nfs defaults 0 0' >>sudo /etc/fstab")
 os.system("sudo apt install sysbench")
 os.system("sudo apt-get install lm-sensors ")
 # os.system("sudo apt install openssh-server")

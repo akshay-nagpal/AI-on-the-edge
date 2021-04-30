@@ -1,4 +1,5 @@
 import json
+os.system("pip3 install mysql-connector-python")
 import mysql.connector
 from collections import defaultdict
 import os
@@ -57,7 +58,7 @@ def score(name):
 
     return Score
 
-mydb = mysql.connector.connect( host="localhost",user="root",password="rahul166",database="platformdb",auth_plugin='mysql_native_password')
+mydb = mysql.connector.connect( host="192.168.29.178:8085",user="test",password="test",database="platformdb",auth_plugin='mysql_native_password')
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM Resource")
 myresult = mycursor.fetchall()
