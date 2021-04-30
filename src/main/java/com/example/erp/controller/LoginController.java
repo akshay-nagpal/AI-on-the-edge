@@ -1,5 +1,7 @@
 package com.example.erp.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.example.erp.bean.Login;
 import com.example.erp.bean.Resource;
 import com.example.erp.services.LoginService;
@@ -17,6 +19,7 @@ import java.net.URISyntaxException;
 
 @Path("login")
 public class LoginController {
+    private static final Logger logger = LogManager.getLogger(LoginController.class);
     @POST
     @Path("/login")
     @Produces(MediaType.TEXT_PLAIN)
@@ -29,9 +32,13 @@ public class LoginController {
         int ret = ls_obj.login(loginobj);
         System.out.println(ret);
         if (ret == 0) {
+            logger.info("{} Login unsuccessful for ", loginobj.getEmail());
+
             return Response.status(406).build();
         }
         else {
+            logger.info("{} Login successful for", loginobj.getEmail());
+
             return Response.ok().status(200).build();
         }
         }
@@ -46,8 +53,12 @@ public class LoginController {
         System.out.println(loginobj.getPassword());
         System.out.println(loginobj.getUsertype());
         if (ret == 0) {
+            logger.info("{} User registration is unsuccessful ", loginobj.getEmail());
+
             return Response.status(406).build();
         }
+        logger.info("{} User registration is successful ", loginobj.getEmail());
+
         return Response.ok().status(200).build();
     }
     @POST
@@ -65,8 +76,11 @@ public class LoginController {
         System.out.println(obj.getSudo_password());
         System.out.println(obj.getUsertype());
         if (ret == 0) {
+            logger.info("{} Server registration is unsuccessful ", obj.getEmail());
             return Response.status(406).build();
         }
+        logger.info("{} server registration is successful ", obj.getEmail());
+
         return Response.ok().status(200).build();
     }
 //    @POST

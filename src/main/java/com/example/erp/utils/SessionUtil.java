@@ -11,8 +11,13 @@ public class SessionUtil {
     static {
         try {
             Configuration configuration = new Configuration();
+//            String url = System.getenv("HIBERNATE_MYSQL_URL");
+//            if (url != null) {
+//                configuration.setProperty("hibernate.connection.url", "jdbc:mysql://"+url+"/platformdb?createDatabaseIfNotExist=true");
+//                configuration.setProperty("hibernate.connection.username", "test");
+//                configuration.setProperty("hibernate.connection.password", "test");
+//            }
             configuration.configure();
-
             ourSessionFactory = configuration.buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
