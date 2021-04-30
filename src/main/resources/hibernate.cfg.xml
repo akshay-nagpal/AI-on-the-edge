@@ -14,7 +14,7 @@
         <property name="show_sql">true</property>
         <mapping class="com.example.erp.bean.Login" />
         <mapping class="com.example.erp.bean.Resource" />
-        <mapping class="com.example.erp.bean.Application"></mapping>
+        <mapping class="com.example.erp.bean.Application"/>
 <!--        <mapping class="com.example.erp.bean.Employees" />-->
     </session-factory>
 </hibernate-configuration>
