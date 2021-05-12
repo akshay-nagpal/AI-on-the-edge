@@ -21,7 +21,7 @@ def callback(ch, method, properties, body):
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        done= "/mnt/nfs_share"
+        done= "./mnt/nfs_share"
 #         f=open("/mnt/nfs_share/"+email+"/"+job_path+"/completed.txt","w")
         f=open(done+"/"+email+"/"+appname+"/completed.txt","w")
         f.write("1")
@@ -40,12 +40,12 @@ def run(ack_flag):
         # return 0
     if(active==0 and ack_flag!="1"):
 #         os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+job_path[0]+" "+job_path[1])
-        os.system("python3 /mnt/nfs_share/newfolder/AI-on-the-edge/send.py "+ip+" "+email+" "+appname+" "+"python3 "+appname+".py")
+        os.system("python3 ./mnt/nfs_share/newfolder/AI-on-the-edge/send.py "+ip+" "+email+" "+appname+" "+"python3 "+appname+".py")
         sys.exit(0)
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        path="/mnt/nfs_share"
+        path="./mnt/nfs_share"
 #         f=open("/mnt/nfs_share/"+out_path+"/completed.txt")
         f=open(path+"/"+email+"/"+appname+"/completed.txt")
         f.write(1)

@@ -28,15 +28,15 @@ public class JobController {
         System.out.println(data.getAppname());
         String email=data.getEmail();
         String appname=data.getAppname();
-        String path="/mnt/nfs_share/"+email+"/"+appname;
+        String path="./mnt/nfs_share/"+email+"/"+appname;
         File theDir = new File(path);
         if (!theDir.exists()){
             theDir.mkdirs();
         }
 
-        File myObj = new File("/mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
+        File myObj = new File("./mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
         myObj.createNewFile();
-        FileWriter myWriter = new FileWriter("/mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
+        FileWriter myWriter = new FileWriter("./mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
         myWriter.write("0");
         myWriter.close();
         //        ApplicationService ap_st=new ApplicationService();
@@ -66,10 +66,10 @@ public class JobController {
         String email= item.get(0);
         String appname=item.get(1);
 //        System.out.println(appname);
-        RandomAccessFile in = new RandomAccessFile("/mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt", "r");
+        RandomAccessFile in = new RandomAccessFile("./mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt", "r");
         System.out.println("Inside status");
         String line;
-        File f=new File("/mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
+        File f=new File("./mnt/nfs_share/"+email+"/"+appname+"/"+"completed.txt");
         while(true) {
             in.seek(0);
             line = in.readLine();
@@ -98,7 +98,7 @@ public class JobController {
         String email= item.get(0);
         String appname=item.get(1);
         System.out.println("Download file "+appname);
-        File fileDownload = new File("/mnt/nfs_share/"+email+"/"+appname+"/"+appname+".csv");
+        File fileDownload = new File("./mnt/nfs_share/"+email+"/"+appname+"/"+appname+".csv");
         Response.ResponseBuilder response = Response.ok((Object) fileDownload);
         response.header("Content-Disposition", "attachment;filename=" + appname+".csv");
         logger.info("{} File downloaded for the job", appname);
