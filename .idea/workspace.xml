@@ -28,12 +28,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61392333-fc5e-4f76-b45a-2ec446d82ac5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/platform_logstash.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AI_on_the_edge_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI-on-the-edge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AI-on-the-edge.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platform.log" beforeDir="false" afterPath="$PROJECT_DIR$/platform.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send.py" beforeDir="false" afterPath="$PROJECT_DIR$/send.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/HB_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/HB_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/001.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/001.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +231,7 @@
       <workItem from="1619786723640" duration="357000" />
       <workItem from="1620149801641" duration="57000" />
       <workItem from="1620149879145" duration="3103000" />
-      <workItem from="1620814158558" duration="339000" />
+      <workItem from="1620814158558" duration="2012000" />
     </task>
     <servers />
   </component>

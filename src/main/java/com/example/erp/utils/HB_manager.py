@@ -58,7 +58,7 @@ def score(name):
 
     return Score
 
-mydb = mysql.connector.connect( host="192.168.29.178:8085",user="test",password="test",database="platformdb",auth_plugin='mysql_native_password')
+mydb = mysql.connector.connect( host="192.168.29.132:8085",user="test",password="test",database="platformdb",auth_plugin='mysql_native_password')
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM Resource")
 myresult = mycursor.fetchall()
@@ -92,11 +92,11 @@ for k,v in mapping.items():
 
 print("Active :::" , active)
 print("dead ::" , dead)
-# fa=open("/mnt/nfs_share/active.pickle","wb")
-fa=open("/home/rahul/Documents/active.pickle","wb")
+fa=open("/mnt/nfs_share/active.pickle","wb")
+# fa=open("/home/rahul/Documents/active.pickle","wb")
 pickle.dump(active,fa)
-# fd=open("/mnt/nfs_share/dead.pickle","wb")
-fd=open("/home/rahul/Documents/dead.pickle","wb")
+fd=open("/mnt/nfs_share/dead.pickle","wb")
+# fd=open("/home/rahul/Documents/dead.pickle","wb")
 pickle.dump(dead,fd)
 
 dict1 = []

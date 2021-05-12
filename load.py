@@ -10,23 +10,23 @@ def fun(name):
 
     os.system(command)
     # events_per_sec="sysbench cpu --threads=2 run | awk '/events per second:/ {print $4}' >/./mnt/nfs_share/"+name+".txt"
-    events_per_sec="echo 3000 >/./mnt/nfs_share/"+name+".txt"
+    events_per_sec="echo 3000 > /mnt/nfs_share/"+name+".txt"
     os.system(events_per_sec)
    
 
-    cpu_percent="grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}' >> /./mnt/nfs_share/"+name+".txt"
+    cpu_percent="grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}' >> /mnt/nfs_share/"+name+".txt"
     os.system(cpu_percent)
 
-    free_mem_percent="free | grep Mem | awk '{print $4/$2 * 100.0}' >>  /./mnt/nfs_share/"+name+".txt"
+    free_mem_percent="free | grep Mem | awk '{print $4/$2 * 100.0}' >>  /mnt/nfs_share/"+name+".txt"
     os.system(free_mem_percent)
 
-    actual_free_ram="free | grep Mem | awk '{print $4/(1024*1024)}'>> /./mnt/nfs_share/"+name+".txt"
+    actual_free_ram="free | grep Mem | awk '{print $4/(1024*1024)}'>> /mnt/nfs_share/"+name+".txt"
     os.system(actual_free_ram)
 
-    ip="echo "+name+"" ">>/./mnt/nfs_share/"+name+".txt"
+    ip="echo "+name+"" ">> /mnt/nfs_share/"+name+".txt"
     os.system(ip)
 
-    get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } END { printf($s/$c) }' >>/./mnt/nfs_share/"+name+".txt"
+    get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } END { printf($s/$c) }' >> /mnt/nfs_share/"+name+".txt"
     os.system(get_temp)
     
   #  space="echo \n >>/./mnt/nfs_share/"+name+".txt"
