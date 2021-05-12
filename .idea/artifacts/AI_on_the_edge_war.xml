@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AI-on-the-edge:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>AI-on-the-edge</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="AI-on-the-edge-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="AI-on-the-edge:war exploded" />
+    </root>
+  </artifact>
+</component>

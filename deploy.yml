@@ -1,0 +1,13 @@
+---
+- name: Pull and Run docker image of akshaynagpal22/ai_on_the_edge
+  hosts: all
+  tasks:
+    - name: Pull akshaynagpal22/ai_on_the_edge
+      docker_image:
+        name: akshaynagpal22/ai_on_the_edge
+        source: pull
+    - name: Create default containers
+      docker_container:
+        name: c1
+        image: akshaynagpal22/ai_on_the_edge
+        state: present
