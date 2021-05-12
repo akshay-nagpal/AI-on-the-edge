@@ -23,11 +23,11 @@ def fun(name):
     actual_free_ram="free | grep Mem | awk '{print $4/(1024*1024)}'>> /mnt/nfs_share/"+name+".txt"
     os.system(actual_free_ram)
 
-    ip="echo "+name+"" ">> /mnt/nfs_share/"+name+".txt"
-    os.system(ip)
-
     get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } if ($c==0) {$c++; $c;} END { printf($s/$c) }' >> /mnt/nfs_share/"+name+".txt"
     os.system(get_temp)
+
+    ip="echo "+name+"" ">> /mnt/nfs_share/"+name+".txt"
+    os.system(ip)
     
   #  space="echo \n >>/./mnt/nfs_share/"+name+".txt"
    # os.system(space)

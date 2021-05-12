@@ -34,7 +34,7 @@ def score(name):
     full_name="./mnt/nfs_share/{name}.txt".format(name=name)
     f=open(full_name)
 
-    lst=f.readlines()
+    lst=f.readlines()[:-1]
     lst=[float(i.replace('\n','')) for i in lst]
     print(lst)
 
@@ -46,7 +46,7 @@ def score(name):
 
     free_RAM=lst[3]
 
-    current_temperature=lst[5]
+    current_temperature=lst[4]
 
     number_of_events_per_sec=lst[0]
 
