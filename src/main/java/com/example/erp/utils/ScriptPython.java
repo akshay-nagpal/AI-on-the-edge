@@ -12,7 +12,7 @@ public class ScriptPython {
                 arg2,
         };
         try {
-            Runtime.getRuntime().exec("python3"+" "+"/home/rahul/Documents/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+arg1+" "+arg2);
+            Runtime.getRuntime().exec("python3"+" "+"/./mnt/nfs_share/newfolder/AI-on-the-edge/src/main/java/com/example/erp/utils/load_balancer.py "+arg1+" "+arg2);
             System.out.println("Executed");
         } catch (IOException e) {
             System.out.println("Not executed");
