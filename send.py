@@ -21,7 +21,7 @@ def callback(ch, method, properties, body):
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        done= "./mnt/nfs_share"
+        done= "/./mnt/nfs_share"
 #         f=open("/mnt/nfs_share/"+email+"/"+job_path+"/completed.txt","w")
         f=open(done+"/"+email+"/"+appname+"/completed.txt","w")
         f.write("1")
@@ -45,7 +45,7 @@ def run(ack_flag):
     print(ack_flag)
     if(ack_flag=="1"):
         print("job completeeeddd")
-        path="./mnt/nfs_share"
+        path="/./mnt/nfs_share"
 #         f=open("/mnt/nfs_share/"+out_path+"/completed.txt")
         f=open(path+"/"+email+"/"+appname+"/completed.txt")
         f.write(1)

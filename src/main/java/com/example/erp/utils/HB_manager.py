@@ -29,9 +29,9 @@ def load(name):
 
 
 def score(name):
-    command="cd ./mnt/nfs_share/"
+    command="cd /./mnt/nfs_share/"
     # os.system(command)
-    full_name="./mnt/nfs_share/{name}.txt".format(name=name)
+    full_name="/./mnt/nfs_share/{name}.txt".format(name=name)
     f=open(full_name)
 
     lst=f.readlines()[:-1]
@@ -92,10 +92,10 @@ for k,v in mapping.items():
 
 print("Active :::" , active)
 print("dead ::" , dead)
-fa=open("./mnt/nfs_share/active.pickle","wb")
+fa=open("/./mnt/nfs_share/active.pickle","wb")
 # fa=open("/home/rahul/Documents/active.pickle","wb")
 pickle.dump(active,fa)
-fd=open("./mnt/nfs_share/dead.pickle","wb")
+fd=open("/./mnt/nfs_share/dead.pickle","wb")
 # fd=open("/home/rahul/Documents/dead.pickle","wb")
 pickle.dump(dead,fd)
 
