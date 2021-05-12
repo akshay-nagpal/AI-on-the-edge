@@ -3,7 +3,7 @@ import sys
 import os
 #change this 
 credentials = pika.PlainCredentials(username='test', password='test')
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost',credentials=credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='192.168.29.132',port='8090',credentials=credentials))
 channel = connection.channel()
 
 channel.exchange_declare(exchange='jobs', exchange_type='direct')
@@ -14,7 +14,7 @@ queue_name = result.method.queue
 ip = sys.argv[1]
 
 #Apply some error handling
-ack_connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost',credentials=credentials))
+ack_connection = pika.BlockingConnection(pika.ConnectionParameters(host='192.168.29.132',port='8090',credentials=credentials))
 ack_channel = ack_connection.channel()
 ack_channel.queue_declare(queue='ackqueue')
 

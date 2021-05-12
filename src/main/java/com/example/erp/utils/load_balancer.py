@@ -4,8 +4,7 @@ import sys
 email=sys.argv[1]
 appname=sys.argv[2]
 fa=open("/./mnt/nfs_share/active.pickle","rb")
-# test=open("/home/rahul/Documents/test.txt","w")
-# test.write("working")
+
 
 
 
@@ -14,10 +13,10 @@ fa=open("/./mnt/nfs_share/active.pickle","rb")
 active=pickle.load(fa)
 
 # fd=open("/mnt/nfs_share/dead.pickle","rb")
-fd=open("/./mnt/nfs_share/dead.pickle","wb")
-dead=pickle.load(fd)
+# fd=open("/./mnt/nfs_share/dead.pickle","rb")
+# dead=pickle.load(fd)
 print("Active :::" , active)
-print("dead ::" , dead)
+# print("dead ::" , dead)
 dict1 = []
 for i in active:
     # load(i)
@@ -31,6 +30,9 @@ dict1.sort(key = lambda x: x[1])
 # os.mkdir("/mnt/nfs_share/"+email+"/"+appname+".py")
 # os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/send.py "+ip+" "+email+" "+"python3 "+appname+".py")
 path="/./mnt/nfs_share/"+email+"/"
+os.system("chmod -R 777 "+path)
+test=open("/./mnt/nfs_share/test.txt","w")
+test.write("working")
 #making a directory for a app to store completed.txt
 # os.makedirs(path+appname,exist_ok=True)
 # temp=open(path+appname+"/"+"completed.txt","w")
