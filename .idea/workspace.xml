@@ -30,10 +30,6 @@
     <list default="true" id="61392333-fc5e-4f76-b45a-2ec446d82ac5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recv.py" beforeDir="false" afterPath="$PROJECT_DIR$/recv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/load_balancer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/load_balancer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +228,7 @@
       <workItem from="1620149879145" duration="3103000" />
       <workItem from="1620814158558" duration="5819000" />
       <workItem from="1620820824389" duration="323000" />
-      <workItem from="1620822330506" duration="8949000" />
+      <workItem from="1620822330506" duration="9896000" />
     </task>
     <servers />
   </component>
