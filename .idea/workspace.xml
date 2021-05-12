@@ -29,15 +29,10 @@
   <component name="ChangeListManager">
     <list default="true" id="61392333-fc5e-4f76-b45a-2ec446d82ac5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI-on-the-edge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AI-on-the-edge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/initialize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform.log" beforeDir="false" afterPath="$PROJECT_DIR$/platform.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send.py" beforeDir="false" afterPath="$PROJECT_DIR$/send.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/erp/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/erp/controller/JobController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/HB_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/HB_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/load_balancer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/erp/utils/load_balancer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/001.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/001.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,7 +230,7 @@
       <workItem from="1619786723640" duration="357000" />
       <workItem from="1620149801641" duration="57000" />
       <workItem from="1620149879145" duration="3103000" />
-      <workItem from="1620814158558" duration="3029000" />
+      <workItem from="1620814158558" duration="5819000" />
     </task>
     <servers />
   </component>

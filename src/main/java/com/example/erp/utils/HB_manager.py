@@ -1,8 +1,8 @@
 import json
-os.system("pip3 install mysql-connector-python")
+import os
+# os.system("pip3 install mysql-connector-python")
 import mysql.connector
 from collections import defaultdict
-import os
 import pickle
 def load(name):
     print(name,"hi")
@@ -29,9 +29,9 @@ def load(name):
 
 
 def score(name):
-    command="cd /./mnt/nfs_share/"
+    command="cd /mnt/nfs_share/"
     # os.system(command)
-    full_name="/./mnt/nfs_share/{name}.txt".format(name=name)
+    full_name="/mnt/nfs_share/{name}.txt".format(name=name)
     f=open(full_name)
 
     lst=f.readlines()
@@ -58,7 +58,7 @@ def score(name):
 
     return Score
 
-mydb = mysql.connector.connect( host="192.168.29.132:8085",user="test",password="test",database="platformdb",auth_plugin='mysql_native_password')
+mydb = mysql.connector.connect( host="192.168.29.132",port="8085",user="test",password="test",database="platformdb",auth_plugin='mysql_native_password')
 mycursor = mydb.cursor()
 mycursor.execute("SELECT * FROM Resource")
 myresult = mycursor.fetchall()

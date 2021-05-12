@@ -23,13 +23,13 @@ os.system("pip3 install pika")
 os.system("sudo sensors-detect ")
 os.system("sudo service kmod start")
 def run():
-   os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/load.py "+ip+"")
-   os.system("python3 /./mnt/nfs_share/newfolder/AI-on-the-edge/recv.py "+ip+"")
+   os.system("python3 /mnt/nfs_share/newfolder/AI-on-the-edge/load.py "+ip+"")
 scheduler = BlockingScheduler()
 scheduler2=BackgroundScheduler()
 scheduler2.add_job(run,'cron',second='*/10')
 # scheduler.add_job(run, 'cron', second='*/5')
 scheduler2.start()
+os.system("python3 /mnt/nfs_share/newfolder/AI-on-the-edge/recv.py "+ip+"")
 # scheduler.every(5).seconds.do(run)0
 # while(True):
 #     schedule.run_pending()

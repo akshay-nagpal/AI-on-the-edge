@@ -26,7 +26,7 @@ def fun(name):
     ip="echo "+name+"" ">> /mnt/nfs_share/"+name+".txt"
     os.system(ip)
 
-    get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } END { printf($s/$c) }' >> /mnt/nfs_share/"+name+".txt"
+    get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } if ($c==0) {$c++; $c;} END { printf($s/$c) }' >> /mnt/nfs_share/"+name+".txt"
     os.system(get_temp)
     
   #  space="echo \n >>/./mnt/nfs_share/"+name+".txt"
