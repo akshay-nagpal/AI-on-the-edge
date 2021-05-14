@@ -13,11 +13,10 @@ jobbutton.addEventListener('click', async (e) => {
     let appname=document.getElementById("applicationname").value;
     let email=window.localStorage.getItem("email_id");
     console.log(appname);
-    job={'name':appname,'status':0};
+
     map.set(email,appname);
     console.log("in js");
     console.log(map);
-    displayJobsTable(job,email);
     let response = fetch('api/job/schedule', {
         method: 'POST',
         headers: {
@@ -27,10 +26,14 @@ jobbutton.addEventListener('click', async (e) => {
             email: window.localStorage.getItem("email_id"),
             appname : appname
         })
-    }).then(function () {
-        let res=fetch(encode("api/job/status",email,appname));
-        console.log(res);
     });
+    //     .then(function () {
+    //     let res=fetch(encode("api/job/status",email,appname));
+    //     console.log(res);
+    // });
+    var ret=await fetch(encode("api/job/status",email,appname));
+    job={'name':appname,'status':1};
+    displayJobsTable(job,email);
     // let gresponse = fetch(encode("api/job/status",email,appname));
     //     console.log(gresponse);
     // fetch(encode("api/job/status",email,appname)).then(response => response.json().then(data => ({
