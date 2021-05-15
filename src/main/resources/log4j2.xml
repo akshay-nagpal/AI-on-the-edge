@@ -13,12 +13,12 @@
         </File>
     </Appenders>
     <Loggers>
-        <Root level="debug">
+        <Logger name="org.hibernate" level="error" additivity="false">
+            <AppenderRef ref="Console-Appender"/>
+        </Logger>
+        <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender"/>
         </Root>
     </Loggers>
-    <logger name="org.hibernate">
-        <level value="info"/>
-    </logger>
 </Configuration>
