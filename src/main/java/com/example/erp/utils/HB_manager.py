@@ -107,15 +107,15 @@ for i in active:
 dict1.sort(key = lambda x: x[1])
 
 print(dict1)
-# with open("/mnt/nfs_share/score.json", "w") as outfile:
-#     lst=[]
-#     for tup in dict1:
-#         temp={}
-#         temp['ip'] = tup[0]
-#         temp['score'] = tup[1]
-#         lst.append(temp)
-#     print(lst)
-#     json.dump(lst, outfile)
+with open("/./usr/local/tomcat/webapps/AI/score.json", "w") as outfile:
+    lst=[]
+    for tup in dict1:
+        temp={}
+        temp['ip'] = tup[0]
+        temp['score'] = tup[1]
+        lst.append(temp)
+    print(lst)
+    json.dump(lst, outfile)
 # with open("/home/sachin/Desktop/spe_major/AI-on-the-edge/src/main/java/com/example/erp/utils/file.txt", 'w') as target:# specify path or else it will be created where you run your java code
 #     for tup in dict1:
 #         target.write(tup[0])

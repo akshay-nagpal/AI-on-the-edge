@@ -32,14 +32,14 @@ if(student_form) {
             if (result['status'] == 200) {
                 console.log("In else :" + result['status']);
                 window.localStorage.setItem("email_id", email);
-                window.location="Upload.html"
-                // if(usertype == 3) {
-                //     window.location= "Upload.html";
-                // }
-                // if(usertype==1)
-                // {
-                //     window.location="score.html";
-                // }
+                // window.location="Upload.html"
+                if(usertype == 3) {
+                    window.location= "Upload.html";
+                }
+                if(usertype==1)
+                {
+                    window.location="score.html";
+                }
 
                 // else
                 // {
