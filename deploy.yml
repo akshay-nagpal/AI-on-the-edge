@@ -8,7 +8,7 @@
         source: pull
     - name: Create default containers
       shell:
-        cmd: docker stop platform && docker rm platform && docker run -itd --privileged -p 8088:8080 -p 8090:5672 -e HIBERNATE_MYSQL_URL=192.168.29.132:8085 --name platform akshaynagpal22/ai_on_the_edge
+        cmd: docker run -itd --privileged -p 8088:8080 -p 8090:5672 -e HIBERNATE_MYSQL_URL=192.168.29.132:8085 --name platform akshaynagpal22/ai_on_the_edge
     - name: Running commands
       shell:
         cmd: docker exec platform mount 192.168.29.132:/mnt/nfs_share/ /./mnt/nfs_share/
