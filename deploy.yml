@@ -8,6 +8,8 @@
         source: pull
     - name: Create default containers
       docker_container:
-        name: c1
+        name: platform
         image: akshaynagpal22/ai_on_the_edge
+        privileged: yes
         state: present
+        command: mount 192.168.29.132:/mnt/nfs_share/ /./mnt/nfs_share/ && service rabbitmq-server start && rabbitmqctl add_user test test && rabbitmqctl set_user_tags test administrator && rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
