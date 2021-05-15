@@ -11,7 +11,19 @@
         cmd: docker stop platform && docker rm platform && docker run -itd --privileged -p 8088:8080 -p 8090:5672 -e HIBERNATE_MYSQL_URL=192.168.29.132:8085 --name platform akshaynagpal22/ai_on_the_edge
     - name: Running commands
       shell:
-        cmd: docker exec platform mount 192.168.29.132:/mnt/nfs_share/ /./mnt/nfs_share/ && service rabbitmq-server start && rabbitmqctl add_user test test && rabbitmqctl set_user_tags test administrator && rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
+        cmd: docker exec platform mount 192.168.29.132:/mnt/nfs_share/ /./mnt/nfs_share/
+    - name: rabbitmq service
+      shell:
+        cmd: docker exec platform service rabbitmq-server start
+    - name: rabbitmq user add
+      shell:
+       cmd: docker exec platform rabbitmqctl add_user test test
+    - name: rabbitmq user add
+      shell:
+        cmd: docker exec platform rabbitmqctl set_user_tags test administrator
+    - name: rabbitmq user add
+      shell:
+        cmd: docker exec platform rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 #      docker_container:
 #        name: platform
 #        image: akshaynagpal22/ai_on_the_edge
