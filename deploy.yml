@@ -11,5 +11,10 @@
         name: platform
         image: akshaynagpal22/ai_on_the_edge
         privileged: yes
-        state: present
+        state: started
+        ports:
+          - "8088:8080"
+          - "8090:5672"
+        env:
+          HIBERNATE_MYSQL_URL: "192.168.29.132:8085"
         command: mount 192.168.29.132:/mnt/nfs_share/ /./mnt/nfs_share/ && service rabbitmq-server start && rabbitmqctl add_user test test && rabbitmqctl set_user_tags test administrator && rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
