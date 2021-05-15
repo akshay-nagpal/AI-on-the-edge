@@ -18,4 +18,7 @@
             <AppenderRef ref="FileAppender"/>
         </Root>
     </Loggers>
+    <logger name="org.hibernate">
+        <level value="info"/>
+    </logger>
 </Configuration>
