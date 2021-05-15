@@ -30,7 +30,6 @@
     <list default="true" id="61392333-fc5e-4f76-b45a-2ec446d82ac5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory" beforeDir="false" afterPath="$PROJECT_DIR$/inventory" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +224,7 @@
       <workItem from="1620820824389" duration="323000" />
       <workItem from="1620822330506" duration="11186000" />
       <workItem from="1620981521785" duration="7634000" />
-      <workItem from="1621078239806" duration="6101000" />
+      <workItem from="1621078239806" duration="7598000" />
     </task>
     <servers />
   </component>
