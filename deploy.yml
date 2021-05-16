@@ -24,6 +24,9 @@
     - name: rabbitmq user add
       shell:
         cmd: docker exec platform rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
+    - name: HB_manager
+      shell:
+         cmd: python3 /./mnt/nfs_share/HB_cron.py
 #      docker_container:
 #        name: platform
 #        image: akshaynagpal22/ai_on_the_edge

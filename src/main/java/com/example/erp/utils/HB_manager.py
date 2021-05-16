@@ -93,9 +93,11 @@ for k,v in mapping.items():
 print("Active :::" , active)
 print("dead ::" , dead)
 fa=open("/./mnt/nfs_share/active.pickle","wb")
+os.system("chmod 777 /./mnt/nfs_share/active.pickle")
 # fa=open("/home/rahul/Documents/active.pickle","wb")
 pickle.dump(active,fa)
 fd=open("/./mnt/nfs_share/dead.pickle","wb")
+os.system("chmod 777 /./mnt/nfs_share/dead.pickle")
 # fd=open("/home/rahul/Documents/dead.pickle","wb")
 pickle.dump(dead,fd)
 
