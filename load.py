@@ -9,8 +9,8 @@ def fun(name):
     command="touch {name}.txt".format(name=name)
 
     os.system(command)
-    # events_per_sec="sysbench cpu --threads=2 run | awk '/events per second:/ {print $4}' >/./mnt/nfs_share/"+name+".txt"
-    events_per_sec="echo 3000 > /./mnt/nfs_share/"+name+".txt"
+    events_per_sec="sysbench cpu --threads=2 run | awk '/events per second:/ {print $4}' >/./mnt/nfs_share/"+name+".txt"
+    #events_per_sec="echo 3000 > /./mnt/nfs_share/"+name+".txt"
     os.system(events_per_sec)
    
 
@@ -22,11 +22,14 @@ def fun(name):
 
     actual_free_ram="free | grep Mem | awk '{print $4/(1024*1024)}'>> /./mnt/nfs_share/"+name+".txt"
     os.system(actual_free_ram)
-
-    get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } if ($c==0) {$c++; $c;} END { printf($s/$c) }' >> /./mnt/nfs_share/"+name+".txt"
+    
+    if(name =="192.168.29.132"):
+        get_temp="echo '49.5' >> /./mnt/nfs_share/"+name+".txt"
+    else:
+        get_temp="sensors | perl -ne 'if (/^Core \d+:\s+\+(.*?)°C/) { $s += $1; $c++; } if ($c==0) {$c++; $c;} END { printf($s/$c) }' >> /./mnt/nfs_share/"+name+".txt"
     os.system(get_temp)
 
-    ip="echo "+name+"" ">> /./mnt/nfs_share/"+name+".txt"
+    ip="echo "+name+" >> /./mnt/nfs_share/"+name+".txt"
     os.system(ip)
     
   #  space="echo \n >>/./mnt/nfs_share/"+name+".txt"
